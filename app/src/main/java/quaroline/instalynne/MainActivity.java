@@ -2,6 +2,7 @@ package quaroline.instalynne;
 
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,8 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnMaSignIn;
     private Button btnMaSignUp;
+
     private EditText etMaUsername;
     private EditText etMaPassword;
+
+    private String keyUsername, keyPassword;
+    private String valUsername, valPassword;
+
     Context context;
     SharedPreferences sharedPref;
 
@@ -38,21 +44,29 @@ public class MainActivity extends AppCompatActivity {
         btnMaSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 SharedPreferences.Editor editor = sharedPref.edit();
 
-                editor.putString(getString(R.string.ma_et_username), etMaUsername.getText().toString());
-                editor.putString(getString(R.string.ma_et_password), etMaPassword.getText().toString());
+                keyUsername = getString(R.string.ma_et_username);
+                keyPassword = getString(R.string.ma_et_password);
+
+                valUsername = etMaUsername.getText().toString();
+                valPassword = etMaPassword.getText().toString();
+
+                editor.putString(keyUsername, valUsername);
+                editor.putString(keyPassword, valPassword);
 
                 editor.apply();
-
             }
         });
 
         btnMaSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getBaseContext(), sharedPref.getString(getString(R.string.ma_et_username), etMaUsername.getText().toString()) + "\n" + sharedPref.getString(getString(R.string.ma_et_password), etMaPassword.getText().toString()), Toast.LENGTH_LONG).show();
+
+                if (valUsername.equals(etMaUsername.getText().toString()) && valPassword.equals(etMaPassword.getText().toString())) {
+                    Intent it = new Intent(MainActivity.this, Dashboard.class);
+                    startActivity(it);
+                }
             }
         });
     }
