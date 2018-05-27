@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Instalynne</string>
+
+    <string name="ma_et_user">Username</string>
+    <string name="ma_et_password">Password</string>
+    <string name="ma_btn_signin">Sign in</string>
+    <string name="ma_btn_signup">Sign up</string>
+</resources>
