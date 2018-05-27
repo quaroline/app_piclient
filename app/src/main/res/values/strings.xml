@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Instalynne</string>
+    <string name="app_name">PiClient Photography</string>
 
-    <string name="ma_et_user">Username</string>
+    <string name="ma_et_username">Username</string>
     <string name="ma_et_password">Password</string>
     <string name="ma_btn_signin">Sign in</string>
     <string name="ma_btn_signup">Sign up</string>
