@@ -3,6 +3,9 @@
 
     <string name="ma_et_username">Username</string>
     <string name="ma_et_password">Password</string>
-    <string name="ma_btn_signin">Sign in</string>
-    <string name="ma_btn_signup">Sign up</string>
+    <string name="ma_btn_sign_in">Sign in</string>
+    <string name="ma_btn_sign_up">Sign up</string>
+    <string name="ma_toast_invalid_account">Invalid account. Please, sign up.</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
